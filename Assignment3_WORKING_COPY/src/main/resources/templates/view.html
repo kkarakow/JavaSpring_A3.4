@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View</title>
+</head>
+<body>
+	<h1>View Records</h1>
+	
+	<table>
+		<tr>
+			<th>Employee ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+			<th>Hire Date</th>
+			<th>Job ID</th>
+			<th>Salary</th>
+			<th>Commission %</th>
+			<th>Manager ID</th>
+			<th>Department ID</th>	
+		</tr>
+		<tr th:each="e:${employeeList}">
+			<td th:text="${e.EMPLOYEE_ID}">435422</td>
+			<td th:text="${e.FIRST_NAME}">Test</td>
+			<td th:text="${e.LAST_NAME}">Test</td>
+			<td th:text="${e.EMAIL}">test@test.com</td>
+			<td th:text="${e.PHONE_NUMBER}">123456789</td>
+			<td th:text="${e.HIRE_DATE}">2021-08-01</td>
+			<td th:text="${e.JOB_ID}">21414</td>
+			<td th:text="${e.SALARY}">400</td>
+			<td th:text="${e.COMMISSION_PCT}">0</td>
+			<td th:text="${e.MANAGER_ID}">325235</td>
+			<td th:text="${e.DEPARTMENT_ID}">10</td>
+		</tr>
+	
+	
+	</table>
+	
+	
+	
+	<a href="/">Home</a>
+	<a href="/insert">Insert</a>
+	<a href="/update">Update</a>
+	<a href="/secure/delete" th:href="@{/secure}">Delete</a>
+</body>
+</html>

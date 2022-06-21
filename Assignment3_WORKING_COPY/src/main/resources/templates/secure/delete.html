@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Delete Employee</title>
+</head>
+<body>
+	<h1>Delete Employee</h1>
+	
+		<form method="post" action="#" th:action="@{/deleteEmployee}" th:object="${employee}">
+	
+	<table>
+	
+	<tr>
+	<td>Employee ID: <select name="EMPLOYEE_ID" id="EMPLOYEE_ID">
+		<option th:each="e:${employeeList}" th:value="${e.EMPLOYEE_ID}" th:text="${e.EMPLOYEE_ID}"/>
+	</select></td>
+	</tr>
+	<tr>
+	<td><input type="submit" value="Delete" id="submit"/></td>
+	</tr>
+	</table>
+	</form>
+	
+	<a href="/">Home</a>
+	<a href="/insert">Insert</a>
+	<a href="/update">Update</a>
+	<a href="/view">View Records</a>
+</body>
+</html>

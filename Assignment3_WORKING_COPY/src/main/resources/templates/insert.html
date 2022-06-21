@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert Employee</title>
+</head>
+<body>
+	<h1>Insert Employee</h1>
+	
+	<form method="post" action="#" th:action="@{/processForm}" 
+			th:object="${employee}">
+	
+		Employee ID: <input type="number" th:field="*{EMPLOYEE_ID}"><br>
+		
+		First Name: <input type="text" th:field="*{FIRST_NAME}"><br>
+		
+		Last Name: <input type="text" th:field="*{LAST_NAME}"><br>
+		
+		Email: <input type="email" th:field="*{EMAIL}"><br>
+		
+		Phone Number: <input type="number" th:field="*{PHONE_NUMBER}"><br>
+		
+		Hire Date: <input type="date" th:field="*{HIRE_DATE}"><br>
+		
+		Job ID: <input type="number" th:field="*{JOB_ID}"><br>
+		
+		Salary: <input type="number" th:field="*{SALARY}"><br>
+		
+		Commission %: <input type="number" th:field="*{COMMISSION_PCT}"><br>
+		
+		Manager ID: <input type="number" th:field="*{MANAGER_ID}"><br>
+		
+		Department ID: <select th:field="*{DEPARTMENT_ID}">
+			<option th:each="d:${departmentList}" th:value="${d.DEPARTMENT_ID}" 
+				th:text="${d.DEPARTMENT_ID}">
+			</select><br>
+		
+		<input type="submit" value="Insert">
+		
+		
+	
+	
+	</form>
+	
+	<a href="/">Home</a>
+	<a href="/update">Update</a>
+	<a href="/secure/delete" th:href="@{/secure}">Delete</a>
+	<a href="/view">View Records</a>
+	
+</body>
+</html>

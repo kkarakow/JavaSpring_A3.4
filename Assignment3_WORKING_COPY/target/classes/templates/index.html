@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+
+	<p><a href="#" th:href="@{/logout}">Logout</a></p>
+	<a href="/insert">Insert</a>
+	<a href="/update">Update</a>
+	<a href="/secure/delete" th:href="@{/secure}">Delete</a>
+	<a href="/view">View Records</a>
+
+</body>
+</html>

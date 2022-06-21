@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Update Employee</title>
+</head>
+<body>
+	<h1>Update Manager ID</h1>
+	
+	<form method="post" action="#" th:action="@{/updateEmployee}" th:object="${employee}">
+	
+	<table>
+	
+	<tr>
+	<td>Employee ID: <select name="EMPLOYEE_ID" id="EMPLOYEE_ID">
+		<option th:each="e:${employeeList}" th:value="${e.EMPLOYEE_ID}" th:text="${e.EMPLOYEE_ID}"/>
+	</select></td>
+	</tr>
+	<tr>
+	<td>Manager ID: <input type="text" name="MANAGER_ID" th:field="*{MANAGER_ID}" id="MANAGER_ID"/>
+	</td>
+	</tr>
+	<tr>
+	<td><input type="submit" value="Update" id="submit"/></td>
+	</tr>	
+	</table>
+	</form>
+	<a href="/">Home</a>
+	<a href="/insert">Insert</a>
+	<a href="/secure/delete" th:href="@{/secure}">Delete</a>
+	<a href="/view">View Records</a>
+</body>
+</html>
